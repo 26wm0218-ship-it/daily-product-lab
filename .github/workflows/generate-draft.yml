@@ -1,0 +1,55 @@
+name: Generate daily draft
+
+on:
+  workflow_dispatch:
+  # 半手動運用で安定した後に、下の3行を有効化する。
+  # schedule:
+  #   - cron: "37 21 * * *" # 06:37 JST (UTC+9)
+
+concurrency:
+  group: daily-draft
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Generate draft with Codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ":workspace"
+          prompt-file: prompts/generate-draft.md
+
+      - name: Verify generated files
+        run: python scripts/verify.py
+
+      - name: Create or update draft pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ github.token }}
+          branch: automation/daily-draft
+          delete-branch: true
+          commit-message: "content: generate daily draft"
+          title: "Draft: daily experiment"
+          body: |
+            Codexが生成した公開前の下書きです。
+
+            - [ ] 事実・数値・出典を確認した
+            - [ ] 個人情報・権利・安全性を確認した
+            - [ ] ツールの動作を確認した
+            - [ ] CTAと測定指標を確認した
+            - [ ] 公開先ごとの文章を最終調整した
+
+            このPRのマージは公開承認を意味します。外部サービスへの投稿は手動です。
+          draft: always-true
