@@ -1,0 +1,103 @@
+version: 1
+experiment_window: "week-1"
+brand_thesis: "専門研究とリアルな事業運営の両方から課題を拾い、AIとソフトウェアで小さく検証する"
+
+ideas:
+  - id: W1-01
+    day: 1
+    domain: founder-brand
+    audience: "活動を追う読者、将来の協力者"
+    problem: "何を、なぜ毎日検証する人なのかが伝わらない"
+    output: "活動宣言と28日間の実験ページ"
+    format: article
+    distribution: [website, note-draft, x-draft]
+    cta: "次に検証してほしい困りごとを送る"
+    product_metric: "課題提案数"
+    brand_metric: "プロフィール遷移数"
+    effort_hours: 2
+    status: ready
+
+  - id: W1-02
+    day: 2
+    domain: beauty-operations
+    audience: "美容師、個人サロン運営者"
+    problem: "キャンセルが月間売上へ与える影響を即座に把握しにくい"
+    output: "予約キャンセル損失計算機の仕様と試作"
+    format: micro-tool
+    distribution: [website, x-draft]
+    cta: "自分の数値で計算し、改善相談を送る"
+    product_metric: "計算完了数"
+    brand_metric: "再訪数"
+    effort_hours: 4
+    status: ready
+
+  - id: W1-03
+    day: 3
+    domain: beauty-operations
+    audience: "集客に取り組む美容師、個人事業主"
+    problem: "営業DMの改善が感覚頼みになりやすい"
+    output: "約3,000件のDM経験から学んだ検証方法の記事"
+    format: article
+    distribution: [website, note-draft, x-draft]
+    cta: "現在の改善課題を送る"
+    product_metric: "具体的な相談数"
+    brand_metric: "保存または再訪数"
+    effort_hours: 2
+    status: ready
+
+  - id: W1-04
+    day: 4
+    domain: student-career
+    audience: "就職活動中の学生"
+    problem: "応募先ごとの締切と次の行動が散らばる"
+    output: "応募状況トラッカーのテンプレート"
+    format: template
+    distribution: [website, note-draft, x-draft]
+    cta: "テンプレートを複製して改善点を送る"
+    product_metric: "複製または利用開始数"
+    brand_metric: "プロフィール遷移数"
+    effort_hours: 3
+    status: ready
+
+  - id: W1-05
+    day: 5
+    domain: vr-research
+    audience: "立体視を学ぶ学生、研究者、開発者"
+    problem: "視差と奥行きの関係を直感的に理解しにくい"
+    output: "視差・奥行きの小型ビジュアル解説"
+    format: explainer
+    distribution: [website, zenn-draft, x-draft]
+    cta: "理解しづらかった点を送る"
+    product_metric: "操作完了またはフィードバック数"
+    brand_metric: "記事完読または再訪数"
+    effort_hours: 4
+    status: ready
+
+  - id: W1-06
+    day: 6
+    domain: ai-productivity
+    audience: "繰り返し問い合わせへ対応する個人事業主"
+    problem: "同じ質問への回答作成に時間がかかる"
+    output: "問い合わせからFAQ下書きを作るテンプレート"
+    format: template
+    distribution: [website, note-draft, x-draft]
+    cta: "匿名化した質問で試し、修正点を送る"
+    product_metric: "テンプレート利用数"
+    brand_metric: "メール登録数"
+    effort_hours: 3
+    status: ready
+
+  - id: W1-07
+    day: 7
+    domain: weekly-review
+    audience: "活動を追う読者、自分自身"
+    problem: "閲覧数だけでは探索の価値を判断できない"
+    output: "顧客指標とブランド指標を分けた週次レポート"
+    format: report
+    distribution: [website, note-draft, x-draft]
+    cta: "第2週に見たい検証へ投票する"
+    product_metric: "利用、相談、改善要望、支払い打診の合計"
+    brand_metric: "再訪、登録、プロフィール遷移の合計"
+    effort_hours: 2
+    status: ready
+
