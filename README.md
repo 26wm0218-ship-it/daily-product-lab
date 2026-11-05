@@ -18,3 +18,10 @@
 5. 安定するまでは定時実行を有効にせず、`workflow_dispatch` で運用する
 
 生成物は `content/drafts/` に置きます。公開先への自動投稿は行いません。
+
+## Codexと変更確認
+
+- Codexでこのリポジトリを開き、`AGENTS.md` と `docs/decisions.md` を作業前に確認します。判断と検証結果は `docs/progress.md` に追記します。
+- ローカルではPython 3で `python -m unittest discover -s tests -p 'test_*.py'` と `python scripts/verify.py` を実行します。GitHubの `Verify` ワークフローもPRとmainへのpushで同じ検証を行います。
+- 変更はDraft PRで確認します。Codex Code Reviewがリポジトリで有効なら、PRコメントで `@codex review` を依頼します。AIレビューの指摘はテスト結果と差分を照合し、最終判断は人間が行います。
+
