@@ -1,0 +1,12 @@
+{
+  "goal": "Document the repository's existing local verification commands in docs/verification.md, including what each check proves and the Windows Python alias limitation. Do not change product or research content.",
+  "allowed_edit_paths": ["docs/verification.md"],
+  "allow_codex_context_transmission": false,
+  "max_iterations": 2,
+  "max_model_calls": 4,
+  "max_total_tokens": 250000,
+  "max_wall_seconds": 180,
+  "max_call_seconds": 60,
+  "max_check_seconds": 30,
+  "max_file_bytes": 4096
+}
