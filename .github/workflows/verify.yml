@@ -15,5 +15,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+      - name: Test verifier behavior
+        run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Verify structure and drafts
         run: python scripts/verify.py
+
